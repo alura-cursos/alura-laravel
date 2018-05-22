@@ -13,6 +13,11 @@
                 <td><?= $p->valor ?></td>
                 <td><?= $p->descricao ?></td>
                 <td><?= $p->quantidade ?></td>
+                <td>
+                    <a href="/produtos/mostra/<?= $p->id ?>">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </a>
+                </td>
             </tr>
         <?php endforeach ?>
     </table>
