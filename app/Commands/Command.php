@@ -1,4 +1,4 @@
-<?php namespace App\Commands;
+<?php namespace estoque\Commands;
 
 abstract class Command {
 
