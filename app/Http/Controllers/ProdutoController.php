@@ -27,4 +27,21 @@ class ProdutoController extends Controller
         return view('produto.detalhes')->with('p', $resposta[0]);
     }
 
+    public function novo(){
+        return view('produto.formulario');
+    }
+
+    public function adiciona(){
+
+        $nome = Request::input('nome');
+        $valor = Request::input('valor');
+        $descricao = Request::input('descricao');
+        $quantidade = Request::input('quantidade');
+
+        DB::insert('insert into produtos (nome, valor, descricao, quantidade) 
+    values (?, ?, ?, ?)', array($nome, $valor, $descricao, $quantidade));
+
+        return view('produto.adicionado')->with('nome', $nome);
+    }
+
 }
